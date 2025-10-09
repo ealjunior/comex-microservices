@@ -4,7 +4,6 @@ import br.com.alura.comex.model.Usuario;
 import br.com.alura.comex.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service

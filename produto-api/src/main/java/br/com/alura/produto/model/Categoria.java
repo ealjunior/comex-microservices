@@ -9,11 +9,14 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private boolean ativa;
+
     @Column(name = "nome", nullable = false, length = 50)
     private String nome;
 
     public Categoria(String nome) {
         this.nome = nome;
+        this.ativa = true;
     }
 
     public Categoria() {
