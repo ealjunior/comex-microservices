@@ -17,12 +17,13 @@ public class AuthClient {
     }
 
     public ResponseTokenValidation validateToken(String bearerToken) {
-        return client.post()
+        ResponseTokenValidation ans =  client.post()
                 .uri("usuario-api/login/token/validate")
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(new RequestTokenValidation(bearerToken))
                 .retrieve()
                 .body(ResponseTokenValidation.class);
+        return ans;
     }
 
 }

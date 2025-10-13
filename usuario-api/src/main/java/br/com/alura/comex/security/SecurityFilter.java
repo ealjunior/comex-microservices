@@ -47,4 +47,9 @@ public class SecurityFilter extends OncePerRequestFilter {
         return null;
     }
 
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        return request.getRequestURI().startsWith("/login/token") && request.getMethod().equals("POST");
+    }
+
 }

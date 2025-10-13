@@ -35,6 +35,9 @@ public class SecurityConfigurations {
                     .authorizeHttpRequests(auth -> auth
                             .requestMatchers(HttpMethod.POST, "/login").permitAll()
                             .requestMatchers(HttpMethod.POST, "/login/init").permitAll()
+                            .requestMatchers(HttpMethod.POST, "/login/token").permitAll()
+                            .requestMatchers(HttpMethod.POST, "/login/token/validate").permitAll()
+                            .requestMatchers(HttpMethod.POST, "/login/token/test").permitAll()
                             .anyRequest().authenticated()
                     )
                     // Filtro customizado antes do UsernamePasswordAuthenticationFilter
