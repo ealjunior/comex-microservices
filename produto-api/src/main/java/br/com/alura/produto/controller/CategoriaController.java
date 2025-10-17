@@ -29,7 +29,10 @@ public class CategoriaController {
 
         Categoria categoria = request.toCategoria();
         categoriaService.cadastrar(categoria);
-
+        if(!categoriaService.enviar(categoria))
+        {
+            return new ResponseEntity<>("Não foi possível enviar a Categoria - Possível inconsistência", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
         return new ResponseEntity<>(categoria, HttpStatus.OK);
     }
 }
